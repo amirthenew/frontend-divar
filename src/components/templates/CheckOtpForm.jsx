@@ -1,4 +1,5 @@
-import { checkOtp } from "../../services/auth"
+import { checkOtp } from "services/auth"
+import {setCookie} from '../../utils/cookies'
 
 const CheckOtpForm = ({code,setCode,mobile,setStep}) => {
 
@@ -10,7 +11,7 @@ const CheckOtpForm = ({code,setCode,mobile,setStep}) => {
 
         const {response,error} = await checkOtp(mobile,code);
         if(response){
-            console.log(response)
+            setCookie(response.data)
         }
         if(error) console.log(error.response.data.message)
     }
