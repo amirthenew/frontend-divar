@@ -1,9 +1,18 @@
+import { checkOtp } from "../../services/auth"
+
 const CheckOtpForm = ({code,setCode,mobile,setStep}) => {
 
-    const submitHandler = event => {
+    const submitHandler = async (event) => {
         event.preventDefault()
         if (code.length !== 5) return
         console.log(code,mobile)
+
+
+        const {response,error} = await checkOtp(mobile,code);
+        if(response){
+            console.log(response)
+        }
+        if(error) console.log(error.response.data.message)
     }
     return ( <>
     <form onSubmit={submitHandler}>
