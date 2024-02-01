@@ -1,8 +1,12 @@
+import CheckOtpForm from "../components/templates/CheckOtpForm";
+import SendOtpForm from "../components/templates/SendOtpForm";
+
 const AuthPage = () => {
     return ( 
-        <div>
-            AuthPage
-        </div>
+<>
+<SendOtpForm/>
+<CheckOtpForm/>
+</>
      );
 }
  
