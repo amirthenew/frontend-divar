@@ -1,18 +1,27 @@
 const SendOtpForm = ({mobile,setMobile,setStep}) => {
+
+    const submitHandler = (event)=>{
+        event.preventDefault()
+        console.log(event)
+        if(mobile.length!==11)return;
+        //validation
+    }
     return (
         <>
-        <form>
+        <form onSubmit={submitHandler}> 
 <p>ورود به حساب کاربری</p>
 <span>
     برای استفاده از امکانات دیوار لطفا شماره موبایل خود را وارد کنید
 </span>
 <label htmlFor="input">شماره موبایل خود را وارد کنید</label>
-<input 
+<input
+required 
 type="text" 
 id="input" 
 placeholder="َشماره موبایل"
 value={mobile}
 onChange={(e)=>setMobile(e.target.value)}/>
+<button type="submit">ارسال کد تایید</button>
         </form>
         
         </>
