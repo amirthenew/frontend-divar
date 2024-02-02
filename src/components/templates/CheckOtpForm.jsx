@@ -1,5 +1,5 @@
 import { checkOtp } from "services/auth"
-import {setCookie} from '../../utils/cookies'
+import {setCookie} from "utils/cookies"
 
 const CheckOtpForm = ({code,setCode,mobile,setStep}) => {
 
