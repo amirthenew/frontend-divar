@@ -1,18 +1,10 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import AuthPage from "./pages/AuthPage";
-import Homepage from "./pages/HomePage";
-import DashboardPage from "./pages/DashboardPage";
-import AdminPage from "./pages/AdminPage";
-import PageNotFound from "./pages/404";
+import { BrowserRouter } from "react-router-dom";
 import Router from "./router/Router";
 
 function App() {
   return(
 <BrowserRouter>
-
-
 <Router/>
-
 </BrowserRouter>
 
 
