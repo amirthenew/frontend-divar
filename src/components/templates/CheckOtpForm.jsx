@@ -1,8 +1,9 @@
+import { useNavigate } from "react-router-dom"
 import { checkOtp } from "services/auth"
 import {setCookie} from "utils/cookies"
 
 const CheckOtpForm = ({code,setCode,mobile,setStep}) => {
-
+    const navigate = useNavigate()
     const submitHandler = async (event) => {
         event.preventDefault()
         if (code.length !== 5) return
@@ -12,6 +13,7 @@ const CheckOtpForm = ({code,setCode,mobile,setStep}) => {
         const {response,error} = await checkOtp(mobile,code);
         if(response){
             setCookie(response.data)
+            navigate('/')
         }
         if(error) console.log(error.response.data.message)
     }
