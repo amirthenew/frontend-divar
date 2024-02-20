@@ -1,12 +1,12 @@
 import Footer from "./Footer";
 import Header from "./header";
-
+import styles from './Layout.module.css'
 const  Layout = ({children}) => {
     return ( 
 
         <>
         <Header/>
-        <div>{children}</div>
+        <div className={styles.main}>{children}</div>
         <Footer/>
         </>
      );

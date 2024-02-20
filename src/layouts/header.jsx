@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-
+import styles from './Header.module.css'
 const Header = () => {
     return  ( 
         <>
-            <header>
+            <header className={styles.header}>
         <div>
             <Link to='/'>
-                <img src="divar.svg"/>
+                <img className={styles.logo} src="divar.svg"/>
             </Link>
             <span src='loaction.svg'></span>
             <p>تهران</p>
@@ -18,7 +18,7 @@ const Header = () => {
                     <p>دیوار من</p>
                 </span>
             </Link>
-            <Link to='/dashboard'>ثبت آگهی</Link>
+            <Link className={styles.button} to='/dashboard'>ثبت آگهی</Link>
         </div>
 
     </header>
